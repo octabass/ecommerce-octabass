@@ -1,9 +1,15 @@
+import { useContext, useState } from "react"
 import ItemCount from "../ItemCounter/ItemCounter"
 import './ItemDetail.css'
+import { useCartContext } from "../../context/CartContext"
+import { Link } from "react-router-dom"
 
 const ItemDetail = ({product}) => {
-    const onAdd = (count) => {
-        console.log('Cantidad agregada: ', count)
+    const [isCounter, setIsCounter] = useState(true)
+    const {addProduct} = useCartContext()
+    const onAdd = (quantity) => {
+        addProduct({...product, quantity})
+        setIsCounter(false)
     }    
 
     return(
@@ -18,7 +24,19 @@ const ItemDetail = ({product}) => {
                 <div><b>Precio:</b> U$D {product.price}</div>
                 <div><b>Stock Disponible:</b> {product.stock}</div>
                 <div className="counter">
-                <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
+                { isCounter ? 
+                    <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
+                :
+                <>                    
+                    <Link to={'/cart'}>
+                        <button className="btn btn-outline-dark out">Ir a Carrito</button>
+                    </Link>
+                    <Link to={'/'}>
+                        <button className="btn btn-outline-dark out">Volver a Inicio</button>
+                    </Link>
+                </>
+
+                } 
                 </div>
             </div>
         </div>

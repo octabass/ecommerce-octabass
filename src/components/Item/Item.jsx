@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
+import { memo } from "react"
 
-const Item = ({product}) => {
+const Item = memo(({product}) => {
     return (
         <div className="card w-25 m-4">
             <div className="card-body">
@@ -17,6 +18,6 @@ const Item = ({product}) => {
             </div>
         </div>
     )
-}
+})
 
 export default Item

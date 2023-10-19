@@ -1,3 +1,22 @@
+@font-face {
+    font-family: 'Vintage';
+    src: url(/public/fonts/VintageKing.ttf);
+}
+
 .nav-estilo {
     border-bottom: 1px solid #000;
 }
+
+.img-nav {
+    width: 50px;
+    padding-right: 10px;
+}
+
+.text-nav{
+    font-family: 'Vintage';
+    font-size: 50px;
+    color: #000;
+    text-decoration: none;
+}
+
+

@@ -1,8 +1,14 @@
-# React + Vite
+DEPLOY: https://octabass.netlify.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+bootstrap        | 5.3.1
+firebase         | 10.4.0 
+react-bootstrap  | 2.8.0
+react-dom        | 18.2.0
+react-router-dom | 6.16.0
 
-Currently, two official plugins are available:
+CLONAR PROYECTO
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+git clone https://github.com/octabass/ecommerce-octabass.git
+cd ecommerce-octabass
+npm i
+npm run dev
